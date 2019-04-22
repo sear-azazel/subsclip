@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  golang:
+    image: 'golang:1.9.3-alpine3.7'
+    tty: true
+    volumes:
+      - '.:/go'
+    ports:
+      - '8080:8080'
+    environment:
+      - "GOPATH=/go"
+    command: 'go run main.go'
